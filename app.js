@@ -12,11 +12,12 @@ function onReady() {
     //create a new input
     let checkbox = document.createElement('input');
     //create a new input
-    let deleteBtn = document.createElement('input');
+    let deleteBtn = document.createElement('button');
+    //create value
+    let btnValue = document.createTextNode('Delete Task');
+    deleteBtn.appendChild(btnValue);
     //set the input's type to checkbox
     checkbox.type = "checkbox";
-    //set the input's type to button
-    deleteBtn.type = "submit";
     //set deleteBtn text
     deleteBtn.value = "Delete Task";
     //set the title
@@ -29,16 +30,17 @@ function onReady() {
     toDoList.appendChild(newLi);
     //empty the input
     newToDoText.value = '';
+
+    deleteBtn.addEventListener("click", event =>{
+      newLi.remove('li');
+    });
+
   });
 
-  toDoList.addEventListener('submit', event =>{
-    //delete title of appended li
-    document.getElementById('toDoList');
-    toDoList.removeChild('newLi');
-  });
+}
 
-  };
+
 window.onload = function() {
-  alert("The window has loaded!");
+//  alert("The window has loaded!");
   onReady();
 };
