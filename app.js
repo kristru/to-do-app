@@ -71,12 +71,21 @@ window.onload = function() {
   toDos.forEach(function(toDo){
     const newLi = document.createElement('li');
     const checkbox = document.createElement('input');
+    const deleteBtn = document.createElement('button');
     checkbox.type = "checkbox";
+    deleteBtn.textContent = ('Delete Task');
 
     newLi.textContent = toDo.title;
 
     toDoList.appendChild(newLi);
     newLi.appendChild(checkbox);
+    newLi.appendChild(deleteBtn);
+
+    deleteBtn.addEventListener('click', event =>{
+      event.preventDefault();
+      newLi.remove('li');
+    });
+
     });
 };
 
