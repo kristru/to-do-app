@@ -25,7 +25,7 @@ addToDoForm.addEventListener('submit', event =>{
 function renderTheUI(toDos){
   const toDoList = document.getElementById('toDoList');
 
-<<<<<<< HEAD
+
   addToDoForm.addEventListener('submit', event => {
     event.preventDefault();
     // get the text
@@ -65,7 +65,7 @@ function renderTheUI(toDos){
 
 window.onload = function() {
 //  alert("The window has loaded!");
-=======
+
   toDoList.textContent = '';
 
   toDos.forEach(function(toDo){
@@ -94,6 +94,5 @@ window.onload = function() {
 
 
 window.onload = function() {
->>>>>>> appUI
   onReady();
 };
