@@ -27,12 +27,13 @@ function renderTheUI(toDos){
 
 
   addToDoForm.addEventListener('submit', event => {
+    // prevent 'submit' from refreshing the page(default behavior)
     event.preventDefault();
     // get the text
-    let title = newToDoText.value;
+    let task = newToDoText.value;
     //create a new li
     let newLi = document.createElement('li');
-    //create a new input
+    //create a new input/checkbox
     let checkbox = document.createElement('input');
     //create a new input
     let deleteBtn = document.createElement('button');
@@ -43,8 +44,8 @@ function renderTheUI(toDos){
     checkbox.type = "checkbox";
     //set deleteBtn text
     deleteBtn.value = "Delete Task";
-    //set the title
-    newLi.textContent = title;
+    //set the task
+    newLi.textContent = task;
     //attach the checkbox to the li
     newLi.appendChild(checkbox);
     //attach the button to the li
