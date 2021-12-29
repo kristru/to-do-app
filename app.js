@@ -45,7 +45,7 @@ function renderTheUI(toDos){
     //set deleteBtn text
     deleteBtn.value = "Delete Task";
     //set the task
-    newLi.textContent = task;
+    newLi.textContent = task.value;
     //attach the checkbox to the li
     newLi.appendChild(checkbox);
     //attach the button to the li
