@@ -6,14 +6,17 @@
   </head>
   <body>
     <h1>To-Do App</h1>
-    <form id="addToDoForm">
-      <label for="newToDoText">New To-Do:</label>
-      <input type="text" id="newToDoText">
-      <button type="submit">Add To-Do!</button>
+    <form id="createToDoList">
+      <label for="createToDoList">Create a new To-Do List:</label>
+      <input type="text" id="newListName" />
+      <button type="submit">Create list!</button>
     </form>
 
-    <ul id="toDoList">
-    </ul>
+
+    <div class="lists">
+        <ul id="toDoLists">
+        </ul>
+    </div>
 
     <script src="app.js"></script>
   </body>
