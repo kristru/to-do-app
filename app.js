@@ -7,20 +7,23 @@ function onReady(){
     //stop submit from refreshing page
     event.preventDefault();
 
-    //get the text
+    //get the text for the list
     let listName = newListName.value;
 
-    //create a new List li
-    let listsLi = document.createElement('div');
+    //create a new List div
+      let listCard = document.createElement('div');
+      //add class to list div cards
+      listCard.classList.add('col-md-4','card','listName');
+      //turn div into a node
+      let newListCard = document.createTextNode(listName);
+    //name the new card/div
+      listCard.appendChild(newListCard);
 
-    //create a form for tasks
+    //add a form to listCard
+      
 
-    //set the List's li to input
-    listsLi.textContent = listName;
-    //attach the form to the List li
-
-    //attach the List li to the ul
-    toDoLists.appendChild(listsLi);
+    //attach the new card to the toDoLists
+    toDoLists.appendChild(listCard);
 
 
     //empty the input
