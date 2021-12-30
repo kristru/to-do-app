@@ -11,7 +11,7 @@ function onReady(){
     let listName = newListName.value;
 
     //create a new List li
-    let listsLi = document.createElement('li');
+    let listsLi = document.createElement('div');
 
     //create a form for tasks
 
