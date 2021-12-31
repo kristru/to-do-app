@@ -8,22 +8,52 @@ function onReady(){
     event.preventDefault();
 
     //get the text for the list
-    let listName = newListName.value;
+      let listName = newListName.value;
 
-    //create a new List div
+    //create a new listCard div
       let listCard = document.createElement('div');
-      //add class to list div cards
+      //add class to listCard
       listCard.classList.add('col-md-4','card','listName');
-      //turn div into a node
+      //create a unique id for the listCard
+      let listNameId = Math.floor(Math.random() * 100);
+      //add created id to listCard
+      listCard.setAttribute('id',listNameId);
+
+
+    //turn newListCard into a node
       let newListCard = document.createTextNode(listName);
-    //name the new card/div
+    //name newListCard
       listCard.appendChild(newListCard);
 
-    //add a form to listCard
-      
 
     //attach the new card to the toDoLists
     toDoLists.appendChild(listCard);
+
+
+    //create taskForm for the newListCard
+        //create a form element
+        let taskForm = document.createElement('form');
+        let taskInput = document.createElement('input');
+        taskInput.type = 'text';
+        let taskSubmit = document.createElement('button');
+        taskSubmit.type = 'submit';
+        let submitButton = document.createTextNode('add task');
+        taskSubmit.appendChild(submitButton);
+        console.log(taskForm + taskInput);
+
+        //attach elements to form
+        taskForm.appendChild(taskInput);
+        taskForm.appendChild(taskSubmit);
+
+        listCard.appendChild(taskForm);
+        console.log('form for card '+ listNameId);
+
+        //let form = document.createElement('input');
+        //form.type = 'text';
+        //console.log(form);
+
+
+
 
 
     //empty the input
