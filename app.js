@@ -13,7 +13,7 @@ function onReady(){
     //create a new listCard div
       let listCard = document.createElement('div');
       //add class to listCard
-      listCard.classList.add('col-md-4','card','listName');
+      listCard.classList.add('col-md-4','card','p-2','listName');
       //create a unique id for the listCard
       let listNameId = Math.floor(Math.random() * 100);
       //add created id to listCard
@@ -27,19 +27,30 @@ function onReady(){
 
 
     //attach the new card to the toDoLists
-    toDoLists.appendChild(listCard);
+      toDoLists.appendChild(listCard);
 
 
     //create taskForm for the newListCard
         //create a form element
         let taskForm = document.createElement('form');
+        taskForm.setAttribute('id','list-'+ listNameId + '-tasks');
         let taskInput = document.createElement('input');
         taskInput.type = 'text';
         let taskSubmit = document.createElement('button');
         taskSubmit.type = 'submit';
         let submitButton = document.createTextNode('add task');
         taskSubmit.appendChild(submitButton);
-        console.log(taskForm + taskInput);
+
+        //task form functionality
+        taskForm.addEventListener('submit',() => {
+          //stop submit from refreshing page
+          event.preventDefault();
+          console.log(taskForm + taskInput);
+          //empty the input
+          console.log('task button entered');
+          taskInput.value = '';
+
+        });
 
         //attach elements to form
         taskForm.appendChild(taskInput);
