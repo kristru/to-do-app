@@ -33,35 +33,49 @@ function onReady(){
     //create taskForm for the newListCard
         //create a form element
         let taskForm = document.createElement('form');
+        //set the attributes to the form
         taskForm.setAttribute('id','list-'+ listNameId + '-tasks');
+
+        //create the form input
         let taskInput = document.createElement('input');
         taskInput.type = 'text';
+        taskInput.id = 'task-form-'+listNameId;
+
+        //create the form button
         let taskSubmit = document.createElement('button');
         taskSubmit.type = 'submit';
         let submitButton = document.createTextNode('add task');
         taskSubmit.appendChild(submitButton);
 
-        //task form functionality
-        taskForm.addEventListener('submit',() => {
-          //stop submit from refreshing page
-          event.preventDefault();
-          console.log(taskForm + taskInput);
-          //empty the input
-          console.log('task button entered');
-          taskInput.value = '';
-
-        });
+        //create a ul for the tasks to attach
+        let taskList = document.createElement('ul');
 
         //attach elements to form
         taskForm.appendChild(taskInput);
         taskForm.appendChild(taskSubmit);
-
         listCard.appendChild(taskForm);
-        console.log('form for card '+ listNameId);
+        listCard.appendChild(taskList);
 
-        //let form = document.createElement('input');
-        //form.type = 'text';
-        //console.log(form);
+
+        //task form functionality
+        taskForm.addEventListener('submit',() => {
+          //stop submit from refreshing page
+          event.preventDefault();
+          //create a variable for tasks
+          let taskValue = taskInput.value;
+          console.log(taskValue);
+          //create a task name node to attach to ul
+          let newTask = document.createElement('li');
+          //get the value of task
+          let taskName = document.createTextNode(taskValue);
+          //attach the node to list ul
+          taskList.appendChild(newTask);
+          //attach task value to li
+          newTask.appendChild(taskName);
+          //empty the input
+          taskInput.value = '';
+
+        });
 
 
 
